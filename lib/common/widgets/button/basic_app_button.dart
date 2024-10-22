@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_2030_flutter/core/configs/theme/app_colors.dart';
 
 class BasicAppButton extends StatelessWidget {
   final String text;
@@ -17,16 +18,19 @@ class BasicAppButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-          backgroundColor: Theme.of(context).primaryColor,
-          textStyle: const TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
+          backgroundColor: AppColors.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
-          minimumSize: Size.fromHeight(height ?? 50)),
-      child: Text(text),
+          minimumSize: Size.fromHeight(height ?? 80)),
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
