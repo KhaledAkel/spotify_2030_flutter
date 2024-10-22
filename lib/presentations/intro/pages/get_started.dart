@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart ';
+import 'package:spotify_2030_flutter/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_2030_flutter/core/configs/assets/app_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_2030_flutter/core/configs/assets/app_vectors.dart ';
@@ -12,7 +13,7 @@ class GetStartedPage extends StatelessWidget {
         body: Stack(
       children: [
         Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: 40,
               vertical: 80,
             ),
@@ -48,6 +49,8 @@ class GetStartedPage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
+              const SizedBox(height: 40),
+              BasicAppButton(text: 'Get Started', onPressed: () {})
             ])),
         Container(
           color: Colors.black.withOpacity(0.15),
