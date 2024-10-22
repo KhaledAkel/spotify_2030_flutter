@@ -12,6 +12,10 @@ class GetStartedPage extends StatelessWidget {
         body: Stack(
       children: [
         Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 40,
+              vertical: 80,
+            ),
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(AppImages.cover),
@@ -42,6 +46,7 @@ class GetStartedPage extends StatelessWidget {
                   color: Colors.grey,
                   fontSize: 13,
                 ),
+                textAlign: TextAlign.center,
               ),
             ])),
         Container(
