@@ -16,6 +16,9 @@ class GetStartedPage extends StatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
+        ),
+        Container(
+          color: Colors.black.withOpacity(0.5),
         )
       ],
     ));
