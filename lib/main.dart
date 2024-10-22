@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/configs/theme/app_theme.dart';
+import 'presentations/splash/pages/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo', theme: AppTheme.lightTheme, home: Container());
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        home: const SplashPage());
   }
 }
