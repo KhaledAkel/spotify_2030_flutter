@@ -3,6 +3,7 @@ import 'package:spotify_2030_flutter/common/widgets/button/basic_app_button.dart
 import 'package:spotify_2030_flutter/core/configs/assets/app_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_2030_flutter/core/configs/assets/app_vectors.dart ';
+import 'package:spotify_2030_flutter/presentations/choose_mode/pages/choose_mode.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
@@ -13,16 +14,23 @@ class GetStartedPage extends StatelessWidget {
         body: Stack(
       children: [
         Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 40,
+            vertical: 80,
+          ),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AppImages.cover),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Container(
             padding: const EdgeInsets.symmetric(
               horizontal: 40,
               vertical: 80,
             ),
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(AppImages.cover),
-                fit: BoxFit.cover,
-              ),
-            ),
+            color: Colors.black.withOpacity(0.15),
             child: Column(children: [
               Align(
                 alignment: Alignment.topCenter,
@@ -50,11 +58,15 @@ class GetStartedPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 40),
-              BasicAppButton(text: 'Get Started', onPressed: () {})
-            ])),
-        Container(
-          color: Colors.black.withOpacity(0.15),
-        )
+              BasicAppButton(
+                  text: 'Get Started',
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChooseModePage()));
+                  })
+            ]))
       ],
     ));
   }
