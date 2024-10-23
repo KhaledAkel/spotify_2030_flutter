@@ -6,16 +6,31 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = ThemeMode.light;
+
+  void toggleTheme(bool isDarkMode) {
+    setState(() {
+      _themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.lightTheme,
-        home: const SplashPage());
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: _themeMode,
+      home: SplashPage(onToggleTheme: toggleTheme),
+    );
   }
 }
