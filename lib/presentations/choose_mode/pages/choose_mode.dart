@@ -4,6 +4,7 @@ import 'package:spotify_2030_flutter/core/configs/assets/app_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_2030_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_2030_flutter/common/widgets/button/mode_button.dart';
+import 'package:spotify_2030_flutter/presentations/auth/pages/signup_or_signin.dart';
 
 class ChooseModePage extends StatefulWidget {
   final Function(bool) onToggleTheme;
@@ -114,7 +115,8 @@ class _ChooseModePageState extends State<ChooseModePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Container(), // Go to another page
+                        builder: (context) =>
+                            SignupOrSignin(), // Go to another page
                       ),
                     );
                   },
