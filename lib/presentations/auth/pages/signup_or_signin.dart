@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_2030_flutter/core/configs/assets/app_vectors.dart';
 
 class SignupOrSignin extends StatelessWidget {
   const SignupOrSignin({super.key});
@@ -7,7 +9,14 @@ class SignupOrSignin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
-      children: [],
+      children: [
+        Align(
+          alignment: Alignment.topRight,
+          child: SvgPicture.asset(
+            AppVectors.pattern1,
+          ),
+        )
+      ],
     ));
   }
 }
