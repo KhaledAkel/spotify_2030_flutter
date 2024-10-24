@@ -7,6 +7,7 @@ class ModeButton extends StatelessWidget {
   final double? height;
   final double? width;
   final VoidCallback onPressed;
+  final bool isSelected; // Property to track selection
 
   const ModeButton({
     Key? key,
@@ -14,6 +15,7 @@ class ModeButton extends StatelessWidget {
     this.height,
     this.width,
     required this.onPressed,
+    required this.isSelected,
   }) : super(key: key);
 
   @override
@@ -23,26 +25,34 @@ class ModeButton extends StatelessWidget {
       width: width ?? 70,
       child: Stack(
         children: [
+          // Background circle with blur effect and border
           ClipOval(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xff30393c)
-                      .withOpacity(0.5)
+                  color: const Color(0xff30393c)
                       .withOpacity(0.5), // Light transparent background
                   shape: BoxShape.circle,
+                  border: Border.all(
+                    color: isSelected
+                        ? Theme.of(context)
+                            .primaryColor // Use primary color if selected
+                        : Colors.transparent, // Transparent if not selected
+                    width: 3, // Thickness of the border
+                  ),
                 ),
               ),
             ),
           ),
+          // Elevated button on top of the background
           ElevatedButton(
             onPressed: onPressed, // Use the passed onPressed callback
             style: ElevatedButton.styleFrom(
               backgroundColor:
                   Colors.transparent, // Make button background transparent
               shadowColor: Colors.transparent, // Remove shadow
-              shape: const CircleBorder(),
+              shape: const CircleBorder(), // Keep circular shape
             ),
             child: SvgPicture.asset(
               image,
