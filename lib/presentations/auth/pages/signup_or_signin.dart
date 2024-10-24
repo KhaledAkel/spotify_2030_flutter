@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_2030_flutter/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_2030_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_2030_flutter/core/configs/assets/app_images.dart';
+import '../../../common/widgets/appbar/app_bar.dart';
 
 class SignupOrSignin extends StatelessWidget {
   const SignupOrSignin({super.key});
@@ -14,6 +15,7 @@ class SignupOrSignin extends StatelessWidget {
         // Add SafeArea here
         child: Stack(
           children: [
+            const BasicAppBar(),
             Align(
               alignment: Alignment.topRight,
               child: SvgPicture.asset(
