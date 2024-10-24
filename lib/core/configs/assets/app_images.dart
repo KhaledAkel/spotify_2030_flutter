@@ -4,4 +4,5 @@ class AppImages {
 
   static const String cover = '${basePath}ariana_bg_intro$format';
   static const String cover2 = '${basePath}dua_bg_intro$format';
+  static const String authCover1 = '${basePath}bilie_bg$format';
 }
