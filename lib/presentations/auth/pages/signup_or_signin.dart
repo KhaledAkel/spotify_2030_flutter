@@ -15,6 +15,12 @@ class SignupOrSignin extends StatelessWidget {
           child: SvgPicture.asset(
             AppVectors.pattern1,
           ),
+        ),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: SvgPicture.asset(
+            AppVectors.pattern2,
+          ),
         )
       ],
     ));
