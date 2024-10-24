@@ -7,6 +7,7 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.lightBackground,
     brightness: Brightness.light,
     fontFamily: 'Satoshi',
+    textTheme: const TextTheme(bodyMedium: TextStyle(color: Color(0xff0D0C0C))),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
@@ -26,6 +27,7 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.darkBackground,
     brightness: Brightness.dark,
     fontFamily: 'Satoshi',
+    textTheme: const TextTheme(bodyMedium: TextStyle(color: Color(0xffffffff))),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
